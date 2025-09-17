@@ -45,7 +45,7 @@
             android:id="@+id/producto_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descripcion del producto"
+            android:text="Descripcion del producto aqui"
             android:fontFamily="sans-serif-light"
             android:textColor="@color/purple_grey"
             android:textSize="8sp"
