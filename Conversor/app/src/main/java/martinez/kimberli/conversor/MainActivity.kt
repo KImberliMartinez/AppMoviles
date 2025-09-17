@@ -50,12 +50,15 @@ class MainActivity : AppCompatActivity() {
             txtNota.setText("Convertir litros a onzas")
         }
 
-        btnConvertir.setOnClickListener {
-            val valor = txtAconvertir.text.toString().trim().toDouble()
+btnConvertir.setOnClickListener {
+            val valor = txtAconvertir.text.toString().trim().toDoubleOrNull()
+            if(valor!=null) {
+                val resultado = convertirValor(valor)
 
-            val resultado = convertirValor(valor)
-
-            txtResultado.text = "Resultado: $resultado"
+                txtResultado.text = "Resultado: $resultado"
+            }else{
+               txtResultado.text="Ingresa un valor numerico"
+            }
         }
     }
 

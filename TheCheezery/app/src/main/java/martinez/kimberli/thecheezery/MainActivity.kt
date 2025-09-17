@@ -1,6 +1,8 @@
 package martinez.kimberli.thecheezery
 
 import android.os.Bundle
+import android.widget.Button
+import android.content.Intent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,7 +18,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    val button:Button= findViewById(R.id.button_get_started) as Button
 
-
+        button.setOnClickListener {
+            var intent: Intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+        }
     }
 }

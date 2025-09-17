@@ -11,12 +11,6 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    val peso: EditText = findViewById(R.id.etPeso)
-    val altura: EditText = findViewById(R.id.etEstatura)
-    val btnCalcular: Button = findViewById(R.id.btnCalcular)
-    val imc: TextView = findViewById(R.id.txResultadoIMC)
-    val estado: TextView = findViewById(R.id.txResultadoIMC)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,9 +20,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val peso: EditText = findViewById(R.id.etPeso)
+        val altura: EditText = findViewById(R.id.etEstatura)
+        val btnCalcular: Button = findViewById(R.id.btnCalcular)
+        val imc: TextView = findViewById(R.id.txResultadoIMC)
+        val estado: TextView = findViewById(R.id.txEstado)
+
         btnCalcular.setOnClickListener {
             val pesoValor= peso.text.toString().toDoubleOrNull()
-            val estaturaValor=altura.toString().toDoubleOrNull()
+            val estaturaValor=altura.text.toString().toDoubleOrNull()
             if (pesoValor != null && estaturaValor != null && estaturaValor > 0) {
                 // Cálculo de IMC
                 val result = pesoValor / (estaturaValor * estaturaValor)
@@ -59,5 +59,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //otra funcion
 }
